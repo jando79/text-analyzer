@@ -15,6 +15,9 @@ function wordCounter(text) {
 }
 
 function numberOfOccurrencesInText(word, text) {
+  if (word.trim().length === 0) {
+    return 0;
+  }
   const textArray = text.split(" ");
   let wordCount = 0;
   textArray.forEach(function(element) {
@@ -56,3 +59,18 @@ function handleFormSubmission() {
 window.addEventListener("load", function() {
   document.querySelector("form#word-counter").addEventListener("submit", handleFormSubmission);
 });
+
+function boldPassage(word, text) {
+  if ((text.trim().length === 0) || (word.trim().length === 0)) {
+    return null;
+  }
+  const p = document.createElement("p");
+  if (word === text) {
+    const bold = document.createElement("strong");
+    bold.append(text);
+    p.append(bold);
+  } else {
+    p.append(text);
+  }
+  return p;
+}
