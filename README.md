@@ -67,3 +67,54 @@ const text = "Red! Red. I like red, green, and yellow.";
 const word = "Red";
 numberOfOccurrencesInText(word, text);
 Expected Output: 3
+
+Describe: omitOffensiveWords()
+
+Test: "It should identify the word 'zoinks' as an offensive word."
+Code:
+const text = "zoinks"
+const word = "zoinks"
+omitOffensiveWords(word, text);
+Expected Output: 1 occurrence
+
+Test: "It should identify the word 'muppeteer' as an offensive word."
+Code:
+const text = "muppeteer"
+const word = "muppeteer"
+omitOffensiveWords(word, text)
+Expected Output: 1 occurence
+
+Test: "It should identify the word 'biffaroni' as an offensive word."
+Code:
+const text = "biffaroni"
+const word = "biffaroni"
+omitOffensiveWords(word, text)
+Expected Output: 1 occurence
+
+Test: "It should identify the word 'loopdaloop' as an offensive word."
+Code: 
+const text = "loopdaloop"
+const word= "loopdaloop"
+omitOffensiveWords(word, text)
+Expected Output: 1 occurence
+
+Test: "It should omit offensive words from all text."
+Code:
+const text = "This biffaroni zoinks to muppeteer the loopdaloop a lot."
+const word = "zoinks, muppeteer, biffaroni, loopdaloop"
+omitOffensiveWords(word, text)
+Expected Output: 4 omissoins
+
+Test: "It should return a word match regardless of case."
+Code:
+const text = "Zoinks BIFFARONI muppeteer loopDAloop";
+const word = "zoinks, muppeteer, biffaroni, loopdaloop";
+omitOffensiveWords(word, text);
+Expected Output: 4 omissions
+
+Test: "It should return a word match regardless of punctuation."
+Code:
+const text = "Zoinks, loopDAloop; biffaroni MUPPETEER!";
+const word = "zoinks, muppeteer, biffaroni, loopdaloop";
+omitOffensiveWords(word, text);
+Expected Output: 4 omissions
