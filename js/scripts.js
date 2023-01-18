@@ -16,3 +16,18 @@ function numberOfOccurrencesInText(word, text) {
   });
   return wordCount;
 }
+
+window.onload = function() {
+  let text = "Zoinks a couple biffaroni words"
+
+  const omitOffensiveWords = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"]
+  const textArray = text.split(" ");
+  console.log(textArray)
+  for (i=0; i <= textArray.length-1; i++) {
+    if(omitOffensiveWords.includes(textArray[i].toLowerCase())) {
+      console.log(textArray[i]);
+      textArray[i] = "****"   
+      console.log(textArray) 
+    }
+  }
+}
